@@ -17,8 +17,8 @@ table { border-collapse: collapse; width: 100%; font-size: 0.95em; }
 th, td { text-align: left; vertical-align: top; padding: 0.4rem 0.5rem 0.4rem 0; border-bottom: 1px solid rgba(128,128,128,0.35); }
 .foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid rgba(128,128,128,0.3); font-size: 0.9rem; }
 .foot nav a { color: inherit; }
-/* Glitch Art's signature: black, or white on a dark page, nothing else. */
-@media (prefers-color-scheme: dark) { .foot .ga-credits { --ga-credits-ink: #fff; } }
+/* Glitch Art's signature: black, in a white container, on any page. */
+.foot .ga-credits { background: #fff; padding: 6px 10px; border-radius: 10px; }
 </style>
 <link rel="stylesheet" href="css/credits.css">
 </head>

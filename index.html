@@ -24,8 +24,8 @@ button, .button { font: inherit; padding: 0.3rem 0.9rem; border: 1px solid; bord
 [hidden] { display: none; }
 .foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid rgba(128,128,128,0.3); font-size: 0.9rem; }
 .foot nav a { color: inherit; }
-/* Glitch Art's signature: black, or white on a dark page, nothing else. */
-@media (prefers-color-scheme: dark) { .foot .ga-credits { --ga-credits-ink: #fff; } }
+/* Glitch Art's signature: black, in a white container, on any page. */
+.foot .ga-credits { background: #fff; padding: 6px 10px; border-radius: 10px; }
 </style>
 <link rel="stylesheet" href="css/credits.css">
 </head>
