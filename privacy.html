@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>DevShare privacy policy</title>
+<style>
+:root { color-scheme: light dark; }
+body { font: 16px/1.55 system-ui, sans-serif; margin: 8vh auto 12vh; max-width: 36rem; padding: 0 1.25rem; }
+h1 { font-size: 1.35rem; margin: 0 0 0.25rem; }
+h2 { font-size: 1rem; margin: 2rem 0 0.5rem; }
+p, li { margin: 0 0 0.75rem; }
+ul { padding-left: 1.2rem; }
+.muted { opacity: 0.65; }
+table { border-collapse: collapse; width: 100%; font-size: 0.95em; }
+th, td { text-align: left; vertical-align: top; padding: 0.4rem 0.5rem 0.4rem 0; border-bottom: 1px solid rgba(128,128,128,0.35); }
+</style>
+</head>
+<body>
+<h1>DevShare privacy policy</h1>
+<p class="muted">17 October 2026</p>
+
+<p>DevShare lets a developer share the websites they are building on their Mac, for a few minutes, with guests who open them on an iPhone, an iPad or another computer. This page says what the apps handle, where it goes and for how long. The short version: everything goes from the guest's device to the host's Mac and back; nothing is sent to GLITCH ART, and nothing is kept.</p>
+
+<h2>Who is responsible</h2>
+<p>GLITCH ART, [legal form, address, registration number], France, publishes DevShare and is the controller for what this page describes. Questions and requests: [email address].</p>
+
+<h2>What the guest app handles</h2>
+<table>
+<tr><th>Data</th><th>Goes to</th><th>Why</th><th>Kept</th></tr>
+<tr><td>The name you give the app for the session (by default your device's model, such as “iPad”)</td><td>The host of the session</td><td>So the host sees who joined</td><td>Only while the session lasts, on the host's Mac</td></tr>
+<tr><td>The addresses of the pages you open, on the session's own sites only</td><td>The host of the session</td><td>So the host sees which pages of their projects you look at</td><td>Only while the session lasts, on the host's Mac</td></tr>
+<tr><td>A key made on your device, different for every host</td><td>The host of the session</td><td>So a host recognises a device that comes back, and can keep one out</td><td>On your device, in the app's own storage</td></tr>
+<tr><td>Your device's network address and encrypted traffic</td><td>A relay, when a direct connection is not possible</td><td>To carry the connection</td><td>Not by DevShare; see Relays</td></tr>
+<tr><td>A key derived from a typed invitation code</td><td>The join server set in the app, only when a code is typed</td><td>To find the host that code belongs to</td><td>Until the invitation expires</td></tr>
+</table>
+
+<p>The pages themselves are served by the host's Mac and shown in the app's own browser. They are not stored by the app beyond the session: “Always fresh pages”, on by default, empties the browser's cache before each page. The host's websites may set cookies in that browser; they are discarded when you leave the session.</p>
+
+<p>The camera is used only to read a QR code, on the device. No picture leaves it.</p>
+
+<h2>What the Mac app handles</h2>
+<p>DevShare for Mac reads the projects you add to it on your own Mac, starts and stops them, and shares the addresses you tick. It shows the guests of a session by the name they gave and the pages they open, and forgets them when the session ends. Its settings stay on your Mac.</p>
+
+<h2>Relays</h2>
+<p>When a guest cannot reach the host directly, the connection goes through a relay. The relay sees the two devices' network addresses and the amount of traffic, not its content, which is encrypted end to end between the guest and the host. By default DevShare uses the public relays run by <a href="https://www.iroh.computer/">number 0</a>; a host or a guest can name a relay of their own instead, including one they run themselves.</p>
+
+<h2>What GLITCH ART receives</h2>
+<p>Nothing. DevShare has no account, no analytics, no advertising and no third-party software development kit. The invitation page at join.glitchr.dev reads the invitation on your device and sends nothing to a server. GLITCH ART does not see who shares, who joins, or what is shown.</p>
+
+<h2>Your rights</h2>
+<p>Under the General Data Protection Regulation you may ask what is held about you, and have it corrected or erased. Since GLITCH ART holds nothing, the host of a session is the one to ask about a session's guests. For anything else, write to [email address]. You may also complain to the CNIL, the French data protection authority.</p>
+
+<h2>Children</h2>
+<p>DevShare is a tool for people who develop websites and those they show them to. It is not addressed to children and collects nothing from anyone.</p>
+
+<h2>Changes</h2>
+<p>When this page changes, the date at the top changes with it.</p>
+</body>
+</html>
