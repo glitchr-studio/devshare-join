@@ -168,7 +168,7 @@ if (found) {
         window.addEventListener('pagehide', left, { once: true });
         const missing = setTimeout(() => {
           try { localStorage.setItem('devshare-no-app', 'yes'); } catch (error) { /* asked again */ }
-        }, 2500);
+        }, 10000);
         location.href = app;
       }, 300);
     }
