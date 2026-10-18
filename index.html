@@ -143,17 +143,35 @@ if (found) {
     event.currentTarget.textContent = 'Copied';
   });
   // The DevShare apps, on a Mac, an iPhone or an iPad, take the invitation
-  // from a link of their own scheme and ask before joining. (With the app
-  // installed, iOS opens it straight from this address, as a universal
-  // link: this page is then not even shown.) Android has no app yet.
+  // from a link of their own scheme and ask before joining. (Once the app's
+  // universal links are on, iOS opens it straight from this address: this
+  // page is then not even shown.) Android has no app yet.
   const android = /Android/.test(navigator.userAgent);
   const ios = /iPhone|iPad|iPod/.test(navigator.userAgent)
     || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
   if (android) {
     document.getElementById('android').hidden = false;
   } else {
-    document.getElementById('app').href = `devshare://open?link=${encodeURIComponent(location.href)}`;
+    const app = `devshare://open?link=${encodeURIComponent(location.href)}`;
+    document.getElementById('app').href = app;
     document.getElementById('app-line').hidden = false;
+    // On an iPhone or an iPad, the app is opened at once, as a scanned QR
+    // code should: Safari asks first. Where it is not installed the page
+    // stays, and this device is not asked again (the button still opens
+    // it, once installed).
+    let tried = false;
+    try { tried = localStorage.getItem('devshare-no-app') === 'yes'; } catch (error) { /* asked */ }
+    if (ios && !tried) {
+      setTimeout(() => {
+        const left = () => { clearTimeout(missing); };
+        document.addEventListener('visibilitychange', left, { once: true });
+        window.addEventListener('pagehide', left, { once: true });
+        const missing = setTimeout(() => {
+          try { localStorage.setItem('devshare-no-app', 'yes'); } catch (error) { /* asked again */ }
+        }, 2500);
+        location.href = app;
+      }, 300);
+    }
   }
   // On an iPhone or an iPad the app is what joins: the command for a
   // computer goes below it, smaller.
