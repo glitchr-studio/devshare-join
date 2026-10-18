@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["3WTG8T64LB.studio.glitchr.devshare"],
+        "components": [
+          { "/": "/", "comment": "An invitation: https://join.glitchr.dev/#<invitation> opens in the DevShare app." }
+        ]
+      }
+    ]
+  }
+}

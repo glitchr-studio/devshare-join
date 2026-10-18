@@ -22,6 +22,8 @@ p { margin: 0 0 1rem; }
 button, .button { font: inherit; padding: 0.3rem 0.9rem; border: 1px solid; border-radius: 6px; background: none; color: inherit; text-decoration: none; display: inline-block; }
 .muted { opacity: 0.65; }
 [hidden] { display: none; }
+.ios #app { font-size: 1.1rem; padding: 0.55rem 1.2rem; background: CanvasText; color: Canvas; border-color: CanvasText; }
+.ios .computer { opacity: 0.6; font-size: 0.9rem; }
 .foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid rgba(128,128,128,0.3); font-size: 0.9rem; }
 .foot nav a { color: inherit; }
 /* Glitch Art's signature: black, in a white container, on any page. */
@@ -34,10 +36,12 @@ button, .button { font: inherit; padding: 0.3rem 0.9rem; border: 1px solid; bord
   <h1>You are invited to a DevShare session</h1>
   <p class="code" id="code"></p>
   <p id="app-line" hidden><a id="app" class="button">Open in the DevShare app</a></p>
+  <div class="computer">
   <p>On a computer with DevShare, join with this page's address:</p>
   <p><code id="command"></code></p>
   <p><button id="copy" type="button">Copy the command</button></p>
-  <p class="muted">DevShare for iPhone, iPad and Android is not available yet: this session can be joined from a computer only.</p>
+  </div>
+  <p class="muted" id="android" hidden>DevShare for Android is not available yet: join from an iPhone, an iPad or a computer.</p>
 </main>
 <main id="nothing" hidden>
   <h1>DevShare</h1>
@@ -138,14 +142,22 @@ if (found) {
     await navigator.clipboard.writeText(command);
     event.currentTarget.textContent = 'Copied';
   });
-  // The desktop app takes the invitation from a link of its own scheme and
-  // asks before joining. Phones and tablets have no app yet.
-  const phone = /iPhone|iPad|iPod|Android/.test(navigator.userAgent)
+  // The DevShare apps, on a Mac, an iPhone or an iPad, take the invitation
+  // from a link of their own scheme and ask before joining. (With the app
+  // installed, iOS opens it straight from this address, as a universal
+  // link: this page is then not even shown.) Android has no app yet.
+  const android = /Android/.test(navigator.userAgent);
+  const ios = /iPhone|iPad|iPod/.test(navigator.userAgent)
     || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
-  if (!phone) {
+  if (android) {
+    document.getElementById('android').hidden = false;
+  } else {
     document.getElementById('app').href = `devshare://open?link=${encodeURIComponent(location.href)}`;
     document.getElementById('app-line').hidden = false;
   }
+  // On an iPhone or an iPad the app is what joins: the command for a
+  // computer goes below it, smaller.
+  if (ios) document.getElementById('invited').classList.add('ios');
   document.getElementById('invited').hidden = false;
 } else {
   document.getElementById('nothing').hidden = false;
