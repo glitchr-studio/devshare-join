@@ -46,6 +46,7 @@ th, td { text-align: left; vertical-align: top; padding: 0.4rem 0.5rem 0.4rem 0;
 <p>A React Native app the host shares runs inside the app: its code comes from the host's Mac, through the session, each time you open it, and is not kept. Its cookies and cache last only while it is open. What it does is the host's app's own doing, as a website's is.</p>
 
 <p>The camera is used only to read a QR code, on the device. No picture leaves it.</p>
+<p>The hosts you block are kept on your device, by their tag, so that their sessions are refused; Advanced settings unblock them. Having declared once that you are 18 or older, to open the apps hosts share, is kept on your device too.</p>
 
 <h2>What the Mac app handles</h2>
 <p>DevShare for Mac reads the projects you add to it on your own Mac, starts and stops them, and shares the addresses you choose. It shows the guests of a session, the pages they open and what they send to the shared projects (passwords hidden).</p>
@@ -58,6 +59,7 @@ th, td { text-align: left; vertical-align: top; padding: 0.4rem 0.5rem 0.4rem 0;
 
 <h2>What GLITCH ART receives</h2>
 <p>Nothing of a session. DevShare has no account, no analytics and no advertising. The iPhone and iPad app includes open-source components (React Native, Hermes, Expo's modules) to run the apps a host shares; they send nothing to anyone. The invitation page at join.glitchr.dev reads the invitation on your device and sends nothing to a server. GLITCH ART does not see who shares, who joins, or what is shown.</p>
+<p>When you report a session, your mail app writes to support@glitchr.io, with the session's project names and its host's tag: GLITCH ART reads it to answer you and to act on the report, and keeps it as mail for as long as that takes.</p>
 <p>One exception, on the Mac: unless another join server is set, DevShare for Mac keeps a hosted session's lookup key (derived from its code, not the code itself) and the host's connection address (its device's key and its relay or network addresses) on GLITCH ART's join server, so that a guest can type the code instead of scanning; they are erased when the invitation expires, after 24 hours at most. The server counts requests by network address in memory, to limit abuse, and writes none down. It runs on Cloudflare (Cloudflare, Inc., United States, as processor). GLITCH ART handles it on the basis of its legitimate interest in letting codes be typed; Cloudflare's transfers out of the European Union rely on the EU–US Data Privacy Framework and standard contractual clauses.</p>
 
 <h2 id="rights">Your rights</h2>
