@@ -1,0 +1,12 @@
+# The DevShare demo React Native app: its Metro server (npx expo start) on port 8081.
+title = "DevShare demo app"
+kind = "native"
+
+[environments.devshare-native]
+icon = "icon.png"
+services = [
+  { host = "devshare-native.local", port = 8081, target = "127.0.0.1:8081", kind = "metro" },
+]
+launch = [
+  { kind = "expo", url = "exp://devshare-native.local:8081" },
+]

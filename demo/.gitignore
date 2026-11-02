@@ -1,0 +1,6 @@
+.server.pid
+.server.log
+node_modules/
+.expo/
+# The demo projects declare what they share: kept, whatever a global ignore says.
+!devshare.toml

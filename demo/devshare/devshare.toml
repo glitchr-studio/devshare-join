@@ -1,0 +1,9 @@
+# The DevShare demo site: served by serve.mjs (make up) on port 47101 of this Mac.
+title = "DevShare demo"
+
+[environments.devshare]
+icon = "logo.png"
+entrypoint = "http://devshare.local"
+services = [
+  { host = "devshare.local", port = 80, target = "127.0.0.1:47101" },
+]

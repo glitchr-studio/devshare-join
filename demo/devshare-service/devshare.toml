@@ -1,0 +1,9 @@
+# The DevShare demo service: ping/pong, served by server.mjs (make up) on port 47103 of this Mac.
+title = "DevShare demo service"
+kind = "service"
+
+[environments.devshare-service]
+icon = "icon.png"
+services = [
+  { host = "devshare-service.local", port = 80, target = "127.0.0.1:47103" },
+]
