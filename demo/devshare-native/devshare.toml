@@ -3,7 +3,8 @@ title = "DevShare demo app"
 kind = "native"
 
 [environments.devshare-native]
-icon = "icon.png"
+title = "Application Native"
+description = "A React Native app that runs on this device, its code coming from the host's Mac."
 services = [
   { host = "devshare-native.local", port = 8081, target = "127.0.0.1:8081", kind = "metro" },
 ]

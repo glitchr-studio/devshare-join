@@ -3,7 +3,8 @@ title = "DevShare demo service"
 kind = "service"
 
 [environments.devshare-service]
-icon = "icon.png"
+title = "Service"
+description = "A ping/pong service: type ping in its terminal, it answers pong."
 services = [
   { host = "devshare-service.local", port = 80, target = "127.0.0.1:47103" },
 ]

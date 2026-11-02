@@ -2,6 +2,8 @@
 title = "DevShare demo"
 
 [environments.devshare]
+title = "Application Web"
+description = "A page served by the host's Mac. Press Ping to ask the service."
 icon = "logo.png"
 entrypoint = "http://devshare.local"
 services = [
