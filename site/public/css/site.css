@@ -241,3 +241,16 @@ pre .ok { color: #5cc58a; }
 @media (max-width: 860px) {
   .kind-list { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
 }
+
+/* A computer: the bar, the hero and the screens fit the window's height, the screens taking what is left. */
+@media (min-width: 1025px) {
+  :root { --bar-h: 4.6rem; --logo: clamp(84px, 14vh, 200px); --hero-gap: clamp(1.25rem, 4.5vh, 4rem); --platforms-h: 3.4rem; }
+  .hero { max-width: 120rem; min-height: calc(100vh - var(--bar-h)); min-height: calc(100svh - var(--bar-h)); padding-top: clamp(0.5rem, 2.5vh, 2.5rem); padding-bottom: clamp(0.75rem, 3vh, 2.5rem); display: flex; flex-direction: column; justify-content: center; }
+  .hero-text { margin-bottom: var(--hero-gap); }
+  .hero-logo { width: var(--logo); height: var(--logo); }
+  .identity { gap: calc(var(--logo) * 0.2); }
+  .hero h1 { font-size: calc(var(--logo) * 0.5); }
+  .tagline { font-size: max(1.05rem, calc(var(--logo) * 0.145)); }
+  .devices { width: min(100%, calc((100svh - var(--bar-h) - var(--logo) - var(--hero-gap) - var(--platforms-h) - clamp(1.25rem, 5.5vh, 5rem)) * 16 / 8.4)); margin: 0 auto; }
+  .platforms { margin-top: 1.5rem; }
+}
