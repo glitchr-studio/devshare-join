@@ -17,7 +17,7 @@
       <p class="eyebrow">Local development, shared</p>
       <h1>Your localhost, on any device. Anywhere.</h1>
       <div class="hero-side">
-        <p class="lead">Share the sites, APIs and apps running on your Mac with clients, colleagues and testers. Real hostnames, trusted HTTPS, end-to-end encrypted. No deploy, no open port.</p>
+        <p class="lead">Share the sites, APIs and apps running on your Mac with clients, colleagues and testers, under the names you already use: <code class="host">shop.test</code>, <code class="host">portfolio.local</code>. No port, no IP. Trusted HTTPS, end-to-end encrypted.</p>
         <p class="actions">
           <a class="button primary" href="mailto:support@glitchr.io?subject=DevShare%20launch">Get notified at launch</a>
           <a class="button" href="#how">How it works</a>
@@ -26,8 +26,8 @@
       </div>
     </div>
     <figure class="devices" aria-label="DevShare on a Mac, an iPad, a Duo and an iPhone">
-      <div class="device mac"><div class="screen"><img src="/images/mac-session.jpg" alt="DevShare for Mac sharing three projects, with the session's QR code and two guests connected" width="1600" height="1000"></div><div class="base"></div></div>
-      <div class="device ipad"><div class="screen"><img src="/images/ipad-demo.jpg" alt="The DevShare demo joined on an iPad: its projects and the session" width="1400" height="985"></div></div>
+      <div class="device mac"><div class="screen"><img src="/images/mac-session.jpg" alt="DevShare for Mac sharing a session: its QR code, a message to testers, two guests and their timeline" width="1800" height="1125"></div><div class="base"></div></div>
+      <div class="device ipad"><div class="screen"><img src="/images/ipad-demo.jpg" alt="The DevShare demo joined on an iPad: a website, a React Native app and a service" width="764" height="1100"></div></div>
       <div class="device duo"><div class="screen"><img src="/images/duo-site.jpg" alt="The demo's site open on a Duo, unfolded, beside the session" width="1200" height="844"></div></div>
       <div class="device iphone"><div class="screen"><img src="/images/iphone-demo.jpg" alt="The DevShare demo on an iPhone: a website, a React Native app and a service" width="460" height="1000"></div></div>
     </figure>
@@ -65,8 +65,8 @@
         <h3>Pick your projects</h3>
         <p>DevShare finds them on its own, with their names and ports: Docker Compose, Symfony, Vite, React Native.</p>
         <pre><span class="dim">~/Sites/</span>shop
-  shop.test:8443
-  shop.test:5173</pre>
+  shop.test
+  api.shop.test</pre>
       </li>
       <li>
         <h3>Share</h3>
@@ -76,8 +76,8 @@
       </li>
       <li>
         <h3>They open it</h3>
-        <p>Same names, same HTTPS, on their iPhone, iPad or Mac, wherever they are.</p>
-        <pre>https://shop.test:8443 <span class="ok">200</span></pre>
+        <p>Same names, no port, same HTTPS, on their iPhone, iPad or Mac, wherever they are.</p>
+        <pre>https://shop.test <span class="ok">200</span></pre>
       </li>
     </ol>
   </section>
