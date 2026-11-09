@@ -61,45 +61,65 @@
     <ol class="steps">
       <li>
         <h3>Pick your projects</h3>
-        <p>DevShare finds them on its own, with their names and ports: Docker Compose, Symfony, Vite, React Native.</p>
+        <p>DevShare finds them and their names: Docker Compose, Symfony, Vite, React Native.</p>
         <pre><span class="dim">~/Sites/</span>shop
-  shop.test
-  api.shop.test</pre>
+<span class="dim">→</span> shop.test
+<span class="dim">→</span> api.shop.test</pre>
       </li>
       <li>
         <h3>Share</h3>
         <p>One click gives a QR code, a link and a code. The session ends on its own.</p>
-        <pre>join.glitchr.dev/#gVOxtm5P…
-<span class="dim">code</span>  7GX2-KLM9</pre>
+        <pre><span class="dim">link</span>  join.glitchr.dev/#gVOx…
+<span class="dim">code</span>  7GX2-KLM9
+<span class="dim">ends</span>  in 1:00:00</pre>
       </li>
       <li>
         <h3>They open it</h3>
-        <p>Same names, no port, same HTTPS, on their iPhone, iPad or Mac, wherever they are.</p>
-        <pre>https://shop.test <span class="ok">200</span></pre>
+        <p>Same names, same HTTPS, on their iPhone, iPad or Mac, wherever they are.</p>
+        <pre>https://shop.test     <span class="ok">200</span>
+https://api.shop.test <span class="ok">200</span>
+<span class="dim">iPhone · iPad · Mac</span></pre>
       </li>
     </ol>
   </section>
 
-  <section class="guest">
+  <section class="guest" id="guest">
     <figure class="phone">
-      <img src="/images/iphone-site.jpg" alt="A site shared from a Mac, open on an iPhone under its own name" width="552" height="1200" loading="lazy">
+      <div class="shot">
+        <img src="/images/iphone-site.jpg" alt="A site shared from a Mac, open on an iPhone under its own name, with DevShare's toolbar at the bottom" width="552" height="1200" loading="lazy">
+        <span class="spot" aria-hidden="true"></span>
+        <button type="button" class="hot" data-feature="time" style="--x:34.4%;--w:23.5%" aria-label="Session time"></button>
+        <button type="button" class="hot" data-feature="comment" style="--x:55.6%;--w:10.9%" aria-label="Comment"></button>
+        <button type="button" class="hot" data-feature="record" style="--x:71.2%;--w:10.9%" aria-label="Record"></button>
+        <button type="button" class="hot" data-feature="reload" style="--x:87%;--w:10.9%" aria-label="Reload"></button>
+      </div>
     </figure>
-    <div>
+    <div class="guest-text">
       <h2>Feedback, right where it happens.</h2>
-      <p class="lead">Guests comment on a page, report a bug with its console attached, or record what they see. It lands on your Mac, next to the page.</p>
-      <p>Every reload hits your machine: a change you save is the change they see.</p>
+      <div class="feature-tabs" role="tablist" aria-label="On the guest's iPhone">
+        <button type="button" role="tab" data-feature="comment" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg>Comments</button>
+        <button type="button" role="tab" data-feature="record" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5" class="fill"/></svg>Recordings</button>
+        <button type="button" role="tab" data-feature="time" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9v4l2.5 2M9.5 3h5"/></svg>Session time</button>
+        <button type="button" role="tab" data-feature="reload" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12a7 7 0 1 1-2.05-4.95"/><path d="M19 4v4h-4"/></svg>Fresh pages</button>
+      </div>
+      <div class="feature-text" aria-live="polite">
+        <div data-feature="comment"><h3>Comments, with the page attached.</h3><p>A guest writes what they see, with a picture of the page, or reports a bug with the page's console lines. It lands in your session's timeline, next to the page it is about.</p></div>
+        <div data-feature="record" hidden><h3>Recordings of what they do.</h3><p>One tap films the page as the guest uses it. The video plays on your Mac, with the page's address and the moment it was made.</p></div>
+        <div data-feature="time" hidden><h3>The session's time, always in sight.</h3><p>Guests see how long is left. The session ends on its own; from your Mac you hold the countdown or end it at once.</p></div>
+        <div data-feature="reload" hidden><h3>Every reload asks your Mac.</h3><p>No cache in between: a change you save is the change they see, on the next reload.</p></div>
+      </div>
     </div>
   </section>
 
   <section class="features">
     <h2>Built for real projects.</h2>
     <dl>
-      <div><dt>Live session view</dt><dd>Who is connected, from where, on which page.</dd></div>
-      <div><dt>Trusted HTTPS</dt><dd>Your Mac's own certificate authority. No browser warnings.</dd></div>
-      <div><dt>Any port</dt><dd>APIs, services and databases, not only websites.</dd></div>
-      <div><dt>Any network</dt><dd>Peer-to-peer when possible, relayed when needed. <a href="https://github.com/glitchr-studio/devshare-relay">Bring your own relay.</a></dd></div>
-      <div><dt>Native apps</dt><dd>React Native apps run on the guest's iPhone from your Metro server.</dd></div>
-      <div><dt>Nearby</dt><dd>Sessions on your network show up on the Macs around you.</dd></div>
+      <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19c.6-3 2.8-4.5 5.5-4.5s4.9 1.5 5.5 4.5"/><circle cx="17" cy="9.5" r="2.3"/><path d="M16 14.6c2.3 0 4 1.3 4.5 4.4"/></svg><dt>Live session view</dt><dd>Who is connected, from where, on which page.</dd></div>
+      <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><path d="M10 15l1.5 1.5 3-3"/></svg><dt>Trusted HTTPS</dt><dd>Your Mac's own certificate authority. No browser warnings.</dd></div>
+      <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3v5M15 3v5"/><path d="M6.5 8h11v4a5.5 5.5 0 0 1-11 0z"/><path d="M12 17.5V21"/></svg><dt>Any port</dt><dd>APIs, services and databases, not only websites.</dd></div>
+      <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.3 2.4 3.4 5.2 3.4 8.5s-1.1 6.1-3.4 8.5c-2.3-2.4-3.4-5.2-3.4-8.5S9.7 5.9 12 3.5z"/></svg><dt>Any network</dt><dd>Peer-to-peer when possible, relayed when needed. <a href="https://github.com/glitchr-studio/devshare-relay">Bring your own relay.</a></dd></div>
+      <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><dt>Native apps</dt><dd>React Native apps run on the guest's iPhone from your Metro server.</dd></div>
+      <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1.8" class="fill"/><path d="M8.2 8.2a5.4 5.4 0 0 0 0 7.6M15.8 8.2a5.4 5.4 0 0 1 0 7.6M5.4 5.4a9.3 9.3 0 0 0 0 13.2M18.6 5.4a9.3 9.3 0 0 1 0 13.2"/></svg><dt>Nearby</dt><dd>Sessions on your network show up on the Macs around you.</dd></div>
     </dl>
   </section>
 
@@ -126,3 +146,4 @@
   </section>
 </main>
 <script src="/js/invitation.js"></script>
+<script src="/js/guest.js"></script>
