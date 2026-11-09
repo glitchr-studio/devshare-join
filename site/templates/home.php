@@ -14,18 +14,24 @@
 <main id="about">
   <section class="hero">
     <div class="hero-text">
-      <img class="hero-logo" src="/images/logo.png" alt="" width="336" height="336">
-      <p class="hero-name">DevShare</p>
-      <h1>Your localhost, on any device. Anywhere.</h1>
-      <p class="lead">Share the sites, APIs and apps running on your Mac with clients, colleagues and testers, under the names you already use: <code class="host">shop.test</code>, <code class="host">portfolio.local</code>. No port, no IP.</p>
-      <ul class="keywords" aria-label="In short">
-        <li>Websites</li><li>React Native</li><li>APIs &amp; services</li><li>.test &amp; .local</li><li>Trusted HTTPS</li><li>End-to-end encrypted</li>
-      </ul>
-      <p class="actions">
-        <a class="button primary" href="mailto:support@glitchr.io?subject=DevShare%20launch">Get notified at launch</a>
-        <a class="button" href="#how">How it works</a>
-      </p>
-      <p class="soon">Coming soon for Mac, iPhone and iPad.</p>
+      <div class="identity">
+        <img class="hero-logo" src="/images/logo.png" alt="" width="336" height="336">
+        <div>
+          <h1>DevShare</h1>
+          <p class="tagline">Your localhost, on any device. Anywhere.</p>
+        </div>
+      </div>
+      <div class="hero-side">
+        <p class="lead">Share the sites, APIs and apps running on your Mac with clients, colleagues and testers, under the names you already use: <code class="host">shop.test</code>, <code class="host">portfolio.local</code>. No port, no IP.</p>
+        <ul class="keywords" aria-label="In short">
+          <li>Websites</li><li>React Native</li><li>APIs &amp; services</li><li>.test &amp; .local</li><li>Trusted HTTPS</li><li>End-to-end encrypted</li>
+        </ul>
+        <p class="actions">
+          <a class="button primary" href="mailto:support@glitchr.io?subject=DevShare%20launch">Get notified at launch</a>
+          <a class="button" href="#how">How it works</a>
+          <span class="soon">Coming soon for Mac, iPhone and iPad.</span>
+        </p>
+      </div>
     </div>
     <figure class="devices" aria-label="DevShare on a Mac, an iPad, a Duo and an iPhone">
       <div class="device mac"><div class="screen"><img src="/images/mac-session.jpg" alt="DevShare for Mac sharing a session: its QR code, a message to testers, two guests and their timeline" width="1800" height="1125"></div><div class="base"></div></div>
