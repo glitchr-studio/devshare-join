@@ -19,17 +19,7 @@
         <div>
           <h1>DevShare</h1>
           <p class="tagline">Your localhost, on any device. Anywhere.</p>
-          <ul class="keywords" aria-label="In short">
-            <li>React Native</li><li>.test &amp; .local</li><li>Trusted HTTPS</li><li>End-to-end encrypted</li>
-          </ul>
         </div>
-      </div>
-      <div class="hero-side">
-        <p class="lead">Share the sites, APIs and apps on your Mac with clients and testers, under their own names: <code class="host">shop.test</code>, <code class="host">portfolio.local</code>. No&nbsp;port, no&nbsp;IP.</p>
-        <p class="actions">
-          <a class="button primary" href="mailto:support@glitchr.io?subject=DevShare%20launch">Get notified at launch</a>
-          <a class="button" href="#how">How it works</a>
-        </p>
       </div>
     </div>
     <figure class="devices" aria-label="DevShare on a Mac, an iPad, a Duo and an iPhone">
@@ -43,6 +33,7 @@
 
   <section class="kinds">
     <h2>Websites, React Native apps, services.</h2>
+    <p class="lead section-lead">Share them from your Mac with clients and testers, under their own names: <code class="host">shop.test</code>, <code class="host">portfolio.local</code>. No&nbsp;port, no&nbsp;IP.</p>
     <div class="kind-list">
       <div class="kind">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
