@@ -19,17 +19,16 @@
         <div>
           <h1>DevShare</h1>
           <p class="tagline">Your localhost, on any device. Anywhere.</p>
+          <ul class="keywords" aria-label="In short">
+            <li>React Native</li><li>.test &amp; .local</li><li>Trusted HTTPS</li><li>End-to-end encrypted</li>
+          </ul>
         </div>
       </div>
       <div class="hero-side">
-        <p class="lead">Share the sites, APIs and apps running on your Mac with clients, colleagues and testers, under the names you already use: <code class="host">shop.test</code>, <code class="host">portfolio.local</code>. No port, no IP.</p>
-        <ul class="keywords" aria-label="In short">
-          <li>Websites</li><li>React Native</li><li>APIs &amp; services</li><li>.test &amp; .local</li><li>Trusted HTTPS</li><li>End-to-end encrypted</li>
-        </ul>
+        <p class="lead">Share the sites, APIs and apps on your Mac with clients and testers, under their own names: <code class="host">shop.test</code>, <code class="host">portfolio.local</code>. No&nbsp;port, no&nbsp;IP.</p>
         <p class="actions">
           <a class="button primary" href="mailto:support@glitchr.io?subject=DevShare%20launch">Get notified at launch</a>
           <a class="button" href="#how">How it works</a>
-          <span class="soon">Coming soon for Mac, iPhone and iPad.</span>
         </p>
       </div>
     </div>
