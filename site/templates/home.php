@@ -128,7 +128,7 @@ https://api.shop.test <span class="ok">200</span>
     <div>
       <h2>Start with the DevShare demo.</h2>
       <p class="lead">DevShare for Mac ships with a ready-made example: a website, a React Native app and a service. Share it in one click, scan the code with your iPhone, and see all three at work.</p>
-      <p>Then switch to your own projects. <a href="https://github.com/glitchr-studio/devshare-join/tree/main/demo">Demo source, MIT</a></p>
+      <p>Then switch to your own projects. <a href="https://github.com/glitchr-studio/devshare-demo">glitchr-studio/devshare-demo</a> (MIT)</p>
     </div>
   </section>
 

@@ -14,4 +14,5 @@ DevShare's public site, https://join.glitchr.dev, and the DevShare demo projects
   vendor/bin/omnibridge-static check dist
   ```
 
-- `demo/`: the three demo projects DevShare for Mac shares in one click (MIT, see `demo/LICENSE`).
+- `demo/`: a submodule, [glitchr-studio/devshare-demo](https://github.com/glitchr-studio/devshare-demo): the three demo
+  projects DevShare for Mac shares in one click (MIT). `git clone --recurse-submodules`, or `git submodule update --init`.
