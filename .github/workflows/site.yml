@@ -1,0 +1,87 @@
+# DevShare's site, https://join.glitchr.dev: site/ exported by omnibridge/static and published on
+# GitHub Pages. The invitation links (https://join.glitchr.dev/#…) open on its home page.
+#
+#   pull request   the site built and checked, uploaded as an artifact (nothing published)
+#   main           the same, then deployed to GitHub Pages
+#
+# Settings → Pages → Source: GitHub Actions.
+name: site
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - uses: shivammathur/setup-php@bf6b4fbd49ca58e4608c9c89fba0b8d90bd2a39f # 2.35.5
+        with:
+          php-version: '8.4'
+          coverage: none
+          tools: composer:v2
+
+      - name: Install
+        run: composer install --no-interaction --no-progress --prefer-dist
+
+      - name: Export
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://join.glitchr.dev' }}
+        run: |
+          vendor/bin/omnibridge-static build site.php --out=dist --strict
+          vendor/bin/omnibridge-static check dist
+          # What the apps and iOS read: the invitation page, the universal links' file, the policy.
+          test -f dist/index.html && test -f dist/js/invitation.js
+          test -f dist/.well-known/apple-app-site-association
+          test -f dist/privacy/index.html && test -f dist/support/index.html && test -f dist/404.html
+          test "$(cat dist/CNAME)" = "join.glitchr.dev"
+
+      - name: Upload the preview
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: site-pr-${{ github.event.number }}
+          path: site/dist
+          include-hidden-files: true
+          retention-days: 14
+
+      - name: Upload the site for GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: site/dist
+          include-hidden-files: true
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

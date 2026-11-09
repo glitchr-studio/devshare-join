@@ -1,0 +1,15 @@
+{
+    "name": "glitchr/devshare-site",
+    "description": "DevShare's site at join.glitchr.dev, exported by omnibridge/static",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.2",
+        "omnibridge/static": "1.x-dev"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

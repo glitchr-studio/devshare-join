@@ -1,50 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="referrer" content="no-referrer">
-<title>DevShare support</title>
-<style>
-:root { color-scheme: light dark; }
-body { font: 16px/1.55 system-ui, sans-serif; margin: 8vh auto 12vh; max-width: 36rem; padding: 0 1.25rem; }
-h1 { font-size: 1.35rem; margin: 0 0 1rem; }
-h2 { font-size: 1rem; margin: 2rem 0 0.5rem; }
-p { margin: 0 0 0.75rem; }
-.muted { opacity: 0.65; }
-.foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid rgba(128,128,128,0.3); font-size: 0.9rem; }
-.foot nav a { color: inherit; }
-/* Glitch Art's signature: black, in a white container, on any page. */
-.foot .ga-credits { background: #fff; padding: 6px 10px; border-radius: 10px; }
-</style>
-<link rel="stylesheet" href="css/credits.css">
-</head>
-<body>
-<h1>DevShare support</h1>
-
-<p>DevShare shares the websites a developer is building on their Mac with guests anywhere, for as long as they choose. The Mac app shares; the iPhone and iPad app, and DevShare on another computer, join.</p>
-
-<h2>Getting help</h2>
-<p>Write to <a href="mailto:support@glitchr.io">support@glitchr.io</a>. Say which app (Mac, or iPhone and iPad), its version, and what you saw. Answers come from France, on working days.</p>
-
-<h2>Common questions</h2>
-
-<p><strong>The app says “no connection”.</strong> The device has neither Wi‑Fi nor mobile data. Connect it; the host's Mac can be on any network.</p>
-
-<p><strong>“The session is over”.</strong> Sessions last the time the host chose, and end on their own. If the host starts it again under the same invitation, “Join again” takes you back in without scanning.</p>
-
-<p><strong>I have a code but no QR code or link.</strong> A code typed by hand needs a join server, set under Advanced settings in the app. Without one, scan the QR code the host's Mac shows, or open the link they send.</p>
-
-<p><strong>A page will not open.</strong> Only the addresses the host ticked are reachable, and only while the session lasts. Ask the host whether the project is running and shared.</p>
-
-<p><strong>Can my guests reach me when I am not on their network?</strong> Yes. When no direct path exists the connection goes through a relay, by default one of the public relays of number 0, or one you run yourself: see <a href="https://github.com/glitchr-studio/devshare-relay">devshare-relay</a>.</p>
-
-<h2>Privacy</h2>
-<p>What the apps handle and where it goes: <a href="privacy">the privacy policy</a>.</p>
-
-<p class="muted">DevShare is made by <a href="https://www.glitchr.io">GLITCH ART</a>, SARL, 5 rue Vincent Scotto, 67400 Illkirch-Graffenstaden, France. RCS Strasbourg 901 821 074.</p>
-<footer class="foot">
-  <nav><a href="privacy">Privacy</a> · <a href="privacy#rights">GDPR</a> · <a href="support">Support</a></nav>
   <div class="ga-credits">
     <a class="ga-credits-sign" href="https://www.glitchr.io" target="_blank" rel="noopener" aria-label="2026 Glitch Art">
       <span class="ga-credits-year" aria-hidden="true"><span>20</span><span>26</span></span>
@@ -104,6 +57,3 @@ p { margin: 0 0 0.75rem; }
     </svg>
     </a>
   </div>
-</footer>
-</body>
-</html>

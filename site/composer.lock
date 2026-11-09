@@ -1,0 +1,92 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "9ad912dfbd38bcc4f25c689efcb54276",
+    "packages": [
+        {
+            "name": "omnibridge/static",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/glitchr-omnisense/omnibridge-static.git",
+                "reference": "689b8c60eb2bbfcd30a6b35234544cbaeca4689b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/glitchr-omnisense/omnibridge-static/zipball/689b8c60eb2bbfcd30a6b35234544cbaeca4689b",
+                "reference": "689b8c60eb2bbfcd30a6b35234544cbaeca4689b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^11.5",
+                "psr/container": "^1.1|^2.0",
+                "symfony/http-foundation": "^6.4|^7.0|^8.0",
+                "symfony/routing": "^6.4|^7.0|^8.0"
+            },
+            "suggest": {
+                "psr/container": "Render\\ActionRenderer: pages rendered by calling the route's action, taken from a PSR-11 container",
+                "symfony/http-foundation": "Render\\RequestRenderer: pages rendered through a host's own request handling (Symfony's kernel, Laravel's)",
+                "symfony/routing": "Route\\RouteCollectionProvider: the pages of a router's routes (Symfony's router, omnibridge/laravel's Routing\\ActionRoutes, symfony/routing's attribute loader)"
+            },
+            "default-branch": true,
+            "bin": [
+                "bin/omnibridge-static"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Omnibridge\\Static\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Meyer"
+                }
+            ],
+            "description": "The static host of the omnibridge family: a generic exporter that enumerates an application's addresses (explicit lists, a router's #[Route] routes with the values of their parameters, a sitemap), renders each at build time by the application's own code (its host's request handling, its actions, or any callable), and writes a deterministic folder for a static host or a CDN - HTML pages, the files of an asset manifest (Vite, Webpack), the files the pages refer to, redirections, 404.html, sitemap.xml and a report with checksums and diagnostics (broken links, duplicate outputs, missing assets, non-deterministic pages). No framework, no bundler.",
+            "homepage": "https://github.com/glitchr-omnisense/omnibridge-static",
+            "keywords": [
+                "export",
+                "framework-agnostic",
+                "laravel",
+                "omnibridge",
+                "static-site",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/glitchr-omnisense/omnibridge-static/issues",
+                "source": "https://github.com/glitchr-omnisense/omnibridge-static/tree/1.x"
+            },
+            "time": "2026-10-27T00:19:31+00:00",
+            "published-time": "2026-10-27T00:27:28+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "omnibridge/static": 20
+    },
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.2"
+    },
+    "platform-dev": {},
+    "plugin-api-version": "2.11.0"
+}

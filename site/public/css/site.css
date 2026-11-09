@@ -1,0 +1,174 @@
+/* DevShare's site: the icon's black and off-white, the Mac app's blue for links. */
+:root {
+  color-scheme: light dark;
+  --ground: #f4f3f1;
+  --card: #ffffff;
+  --ink: #1e1d1b;
+  --muted: #6f6c68;
+  --line: #dedbd7;
+  --accent: #2f6fed;
+  --ok: #1f8a4c;
+  --code-ground: #1e1d1b;
+  --code-ink: #f4f3f1;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --wide: 68rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #171615;
+    --card: #232221;
+    --ink: #eceae7;
+    --muted: #a09c97;
+    --line: #353331;
+    --accent: #6f9bff;
+    --ok: #5cc58a;
+    --code-ground: #0f0e0e;
+    --code-ink: #eceae7;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Helvetica Neue", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-underline-offset: 0.15em; }
+img { max-width: 100%; height: auto; display: block; }
+[hidden] { display: none !important; }
+code, pre { font-family: var(--mono); }
+.muted { color: var(--muted); }
+.small { font-size: 0.88rem; }
+
+/* The bar */
+.bar {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.brand { display: inline-flex; align-items: center; gap: 0.55rem; color: inherit; text-decoration: none; font-weight: 650; letter-spacing: -0.01em; }
+.brand img { border-radius: 7px; box-shadow: 0 0 0 1px var(--line); }
+.bar nav { display: flex; gap: 1.25rem; font-size: 0.95rem; }
+.bar nav a { color: var(--muted); text-decoration: none; }
+.bar nav a:hover, .bar nav a[aria-current] { color: var(--ink); }
+
+/* Sections */
+main { display: block; }
+section { max-width: var(--wide); margin: 0 auto; padding: 4.5rem 1.25rem; }
+section + section { border-top: 1px solid var(--line); }
+h1, h2, h3 { letter-spacing: -0.02em; line-height: 1.15; }
+h2 { font-size: 1.9rem; margin: 0 0 1.5rem; }
+h3 { font-size: 1.08rem; margin: 0 0 0.5rem; letter-spacing: -0.01em; }
+p { margin: 0 0 1rem; }
+
+.hero { padding-top: 3.5rem; }
+.hero-text { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 1rem 3.5rem; align-items: end; margin-bottom: 3rem; }
+.hero-text .eyebrow { grid-column: 1 / -1; margin: 0; }
+.hero-text .lead { margin: 0 0 1rem; }
+.eyebrow { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); margin-bottom: 1rem; }
+.hero h1 { font-size: clamp(2.1rem, 4.6vw, 3.6rem); margin: 0; grid-row: 2 / 4; }
+.lead { font-size: 1.12rem; }
+.availability { color: var(--muted); font-size: 0.95rem; border-left: 2px solid var(--ink); padding-left: 0.85rem; }
+.hero-shot img, .demo img {
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 18px 40px -18px rgba(0, 0, 0, 0.25);
+}
+figure { margin: 0; }
+
+/* How it works */
+.steps { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.steps li { counter-increment: step; display: flex; flex-direction: column; }
+.steps li::before { content: "0" counter(step); font-family: var(--mono); color: var(--muted); font-size: 0.85rem; margin-bottom: 0.6rem; }
+.steps p { flex: 1; }
+pre {
+  margin: 0.5rem 0 0;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  background: var(--code-ground);
+  color: var(--code-ink);
+  font-size: 0.86rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+pre .dim { opacity: 0.55; }
+pre .ok { color: #5cc58a; }
+
+/* The guest */
+.guest { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 4rem; align-items: center; }
+.phone img { border-radius: 2.2rem; border: 8px solid var(--ink); box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.35); }
+
+/* Features */
+.features dl { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 3rem; }
+.features dl > div { padding: 1.1rem 0; border-top: 1px solid var(--line); }
+.features dt { font-weight: 650; margin-bottom: 0.3rem; }
+.features dd { margin: 0; color: var(--muted); }
+
+.demo { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 3rem; align-items: center; }
+.private { max-width: 44rem; margin-left: auto; margin-right: auto; text-align: center; }
+
+/* The invitation */
+.invitation { max-width: 32rem; margin: 10vh auto 0; padding: 0 1.25rem; }
+.invitation h1 { font-size: 1.3rem; margin: 0 0 1.5rem; }
+.invitation .code { font: 2.2rem var(--mono); letter-spacing: 0.08em; margin: 0 0 1.5rem; }
+.invitation code { font-size: 0.9em; word-break: break-all; }
+.button {
+  font: inherit;
+  padding: 0.4rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  background: none;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.button.primary, .ios #app { background: var(--ink); color: var(--ground); border-color: var(--ink); }
+.ios #app { font-size: 1.1rem; padding: 0.6rem 1.25rem; }
+.ios .computer { opacity: 0.6; font-size: 0.9rem; }
+
+/* Privacy, support: one column of text */
+.text { max-width: 40rem; margin: 0 auto; padding: 2.5rem 1.25rem 2rem; }
+.text h1 { font-size: 2rem; margin: 0 0 0.5rem; }
+.text h2 { font-size: 1.15rem; margin: 2.25rem 0 0.6rem; letter-spacing: -0.01em; }
+.text p, .text li { margin: 0 0 0.75rem; }
+.text ul { padding-left: 1.2rem; }
+.text table { border-collapse: collapse; width: 100%; font-size: 0.95em; }
+.text th, .text td { text-align: left; vertical-align: top; padding: 0.45rem 0.6rem 0.45rem 0; border-bottom: 1px solid var(--line); }
+.text .muted { color: var(--muted); }
+
+/* The foot */
+.foot {
+  max-width: var(--wide);
+  margin: 2rem auto 0;
+  padding: 1.5rem 1.25rem 2.5rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+.foot nav a { color: var(--muted); }
+/* Glitch Art's signature: black, in a white container, on any page. */
+.foot .ga-credits { background: #fff; padding: 6px 10px; border-radius: 10px; }
+
+@media (max-width: 860px) {
+  .hero-text, .guest, .demo { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .hero h1 { grid-row: auto; }
+  .steps, .features dl { grid-template-columns: minmax(0, 1fr); }
+  .guest .phone { max-width: 15rem; margin: 0 auto; }
+  section { padding: 3rem 1.25rem; }
+  h2 { font-size: 1.6rem; }
+}
+@media (max-width: 480px) {
+  .bar nav a[href="/#how"] { display: none; }
+}
