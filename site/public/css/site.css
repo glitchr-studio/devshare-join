@@ -305,3 +305,12 @@ pre .ok { color: #5cc58a; }
 .guest .guest-text h2 { margin-bottom: 1.5rem; }
 @media (max-width: 860px) { .feature-text { min-height: 0; } .dots { justify-content: center; } }
 @media (prefers-reduced-motion: reduce) { .feature-text > div { transition: none; } }
+
+/* No rules between sections or features: the spacing separates them. */
+section + section { border-top: 0; }
+.foot { border-top: 0; }
+.features dl { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.25rem 2.5rem; }
+.features dl > div { border-top: 0; padding: 0; }
+.feature-icon { box-sizing: content-box; width: 22px; height: 22px; padding: 9px; margin-bottom: 0.9rem; border-radius: 12px; background: var(--card); border: 1px solid var(--line); }
+@media (max-width: 860px) { .features dl { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.75rem 1.5rem; } }
+@media (max-width: 480px) { .features dl { grid-template-columns: minmax(0, 1fr); } }
