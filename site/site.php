@@ -24,7 +24,7 @@ $site = new Site(getenv('SITE_URL') ?: 'https://join.glitchr.dev');
 $origin = $site->origin();
 
 $pages = [
-    '/' => ['home', 'DevShare: share your local projects with anyone, anywhere', 'Show the websites, APIs and React Native apps running on your Mac to anyone, on any network, for as long as you choose: under their real names, in HTTPS, through an encrypted peer-to-peer link.'],
+    '/' => ['home', 'DevShare: your localhost, on any device', 'Share the sites, APIs and apps running on your Mac with clients, colleagues and testers. Real hostnames, trusted HTTPS, end-to-end encrypted. No deploy, no open port.'],
     '/privacy' => ['privacy', 'DevShare privacy policy', 'What the DevShare apps handle, where it goes and for how long.'],
     '/support' => ['support', 'DevShare support', 'Getting help with DevShare for Mac and DevShare for iPhone and iPad.'],
 ];

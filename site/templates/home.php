@@ -14,35 +14,69 @@
 <main id="about">
   <section class="hero">
     <div class="hero-text">
-      <p class="eyebrow">For developers on a Mac</p>
-      <h1>Show what runs on your Mac to anyone, anywhere, for as long as you choose.</h1>
-      <p class="lead">DevShare shares the websites, APIs and React Native apps you are building with a client on their phone, a colleague at home or a tester abroad, under their real names, in HTTPS, through an encrypted peer-to-peer link. Nothing is deployed and no port is opened.</p>
-      <p class="availability">DevShare for Mac shares. DevShare for iPhone and iPad, or DevShare on another Mac, joins. Both are in beta and coming to the App Store.</p>
+      <p class="eyebrow">Local development, shared</p>
+      <h1>Your localhost, on any device. Anywhere.</h1>
+      <div class="hero-side">
+        <p class="lead">Share the sites, APIs and apps running on your Mac with clients, colleagues and testers. Real hostnames, trusted HTTPS, end-to-end encrypted. No deploy, no open port.</p>
+        <p class="actions">
+          <a class="button primary" href="mailto:support@glitchr.io?subject=DevShare%20launch">Get notified at launch</a>
+          <a class="button" href="#how">How it works</a>
+        </p>
+        <p class="soon">Coming soon for Mac, iPhone and iPad.</p>
+      </div>
     </div>
-    <figure class="hero-shot">
-      <img src="/images/mac-session.jpg" alt="DevShare for Mac sharing three projects: the invitation's QR code and code, two guests connected and what they open" width="1600" height="1000">
+    <figure class="devices" aria-label="DevShare on a Mac, an iPad, a Duo and an iPhone">
+      <div class="device mac"><div class="screen"><img src="/images/mac-session.jpg" alt="DevShare for Mac sharing three projects, with the session's QR code and two guests connected" width="1600" height="1000"></div><div class="base"></div></div>
+      <div class="device ipad"><div class="screen"><img src="/images/ipad-demo.jpg" alt="The DevShare demo joined on an iPad: its projects and the session" width="1400" height="985"></div></div>
+      <div class="device duo"><div class="screen"><img src="/images/duo-site.jpg" alt="The demo's site open on a Duo, unfolded, beside the session" width="1200" height="844"></div></div>
+      <div class="device iphone"><div class="screen"><img src="/images/iphone-demo.jpg" alt="The DevShare demo on an iPhone: a website, a React Native app and a service" width="460" height="1000"></div></div>
     </figure>
+    <p class="platforms"><span>Mac</span><span>iPad</span><span>iPhone</span><span>Duo</span></p>
+  </section>
+
+  <section class="kinds">
+    <h2>Websites, React Native apps, services.</h2>
+    <div class="kind-list">
+      <div class="kind">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+        <h3>Websites</h3>
+        <p>Open in DevShare's browser under their own names, in HTTPS, with every reload fresh from your Mac.</p>
+        <code>https://devshare.local</code>
+      </div>
+      <div class="kind">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
+        <h3>React Native apps</h3>
+        <p>Run on your guest's iPhone or iPad, live from your Metro server. Nothing to build or install.</p>
+        <code>exp://devshare-native.local:8081</code>
+      </div>
+      <div class="kind">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="16" rx="2.5"/><path d="M6.5 9l3 3-3 3M11.5 15h5"/></svg>
+        <h3>Services</h3>
+        <p>APIs and backends other projects call, reachable by name, with a terminal to ping them.</p>
+        <code>devshare-service.local</code>
+      </div>
+    </div>
   </section>
 
   <section id="how" class="how">
-    <h2>How it works</h2>
+    <h2>Three steps. Seconds, not a deployment.</h2>
     <ol class="steps">
       <li>
-        <h3>Your projects, found</h3>
-        <p>Point DevShare at the folder you work in. It finds your projects (Docker Compose, Symfony, Vite, React Native and others), their names, their ports and how to start them.</p>
+        <h3>Pick your projects</h3>
+        <p>DevShare finds them on its own, with their names and ports: Docker Compose, Symfony, Vite, React Native.</p>
         <pre><span class="dim">~/Sites/</span>shop
   shop.test:8443
   shop.test:5173</pre>
       </li>
       <li>
-        <h3>Share in one click</h3>
-        <p>Choose the projects, then Share. You get a QR code, a link and a code. The session ends on its own when its time is up.</p>
+        <h3>Share</h3>
+        <p>One click gives a QR code, a link and a code. The session ends on its own.</p>
         <pre>join.glitchr.dev/#gVOxtm5P…
 <span class="dim">code</span>  7GX2-KLM9</pre>
       </li>
       <li>
-        <h3>They open it as you do</h3>
-        <p>Guests scan or open the invitation and see your sites under their own names, as if the project ran on their device. When the session ends, the names and the routes are gone.</p>
+        <h3>They open it</h3>
+        <p>Same names, same HTTPS, on their iPhone, iPad or Mac, wherever they are.</p>
         <pre>https://shop.test:8443 <span class="ok">200</span></pre>
       </li>
     </ol>
@@ -50,41 +84,47 @@
 
   <section class="guest">
     <figure class="phone">
-      <img src="/images/iphone-site.jpg" alt="A site shared from a Mac, opened in DevShare for iPhone under its own name, devshare.local" width="552" height="1200" loading="lazy">
+      <img src="/images/iphone-site.jpg" alt="A site shared from a Mac, open on an iPhone under its own name" width="552" height="1200" loading="lazy">
     </figure>
     <div>
-      <h2>On their iPhone, iPad or Mac</h2>
-      <p>Pages open in DevShare's own browser, under the names you gave them. Every reload asks your Mac again, without a cache, so a change on your machine shows at once.</p>
-      <p>Guests can leave a comment on a page with a picture of it, report a problem with the page's console, or film what they see: it reaches your Mac, beside the page it is about.</p>
-      <p>A React Native app opens inside DevShare from your Metro server. An API or a service answers in a terminal, with ping, GET and HEAD at hand.</p>
+      <h2>Feedback, right where it happens.</h2>
+      <p class="lead">Guests comment on a page, report a bug with its console attached, or record what they see. It lands on your Mac, next to the page.</p>
+      <p>Every reload hits your machine: a change you save is the change they see.</p>
     </div>
   </section>
 
   <section class="features">
-    <h2>What else it does</h2>
+    <h2>Built for real projects.</h2>
     <dl>
-      <div><dt>See who is there</dt><dd>Each guest's device, how they are connected and the pages they open, live. Hold the countdown, invite more people, or disconnect someone.</dd></div>
-      <div><dt>HTTPS without warnings</dt><dd>Your Mac gets its own certificate authority, trusted once with your consent, and certifies your projects for their development names.</dd></div>
-      <div><dt>Any service, not only websites</dt><dd>Share a port, a development server, an API or a database already running, under a name of your choice.</dd></div>
-      <div><dt>Any network</dt><dd>Directly when a path exists, through a relay when a network demands it: the public relays of number 0, or <a href="https://github.com/glitchr-studio/devshare-relay">one you run yourself</a>.</dd></div>
-      <div><dt>Nearby sessions</dt><dd>A session made visible on your network shows on the Macs around you, as a card with its QR code: one click joins.</dd></div>
-      <div><dt>Simple or developer</dt><dd>A guest who only opens what you share sees cards and nothing else. Developers get the projects, their services and their addresses.</dd></div>
+      <div><dt>Live session view</dt><dd>Who is connected, from where, on which page.</dd></div>
+      <div><dt>Trusted HTTPS</dt><dd>Your Mac's own certificate authority. No browser warnings.</dd></div>
+      <div><dt>Any port</dt><dd>APIs, services and databases, not only websites.</dd></div>
+      <div><dt>Any network</dt><dd>Peer-to-peer when possible, relayed when needed. <a href="https://github.com/glitchr-studio/devshare-relay">Bring your own relay.</a></dd></div>
+      <div><dt>Native apps</dt><dd>React Native apps run on the guest's iPhone from your Metro server.</dd></div>
+      <div><dt>Nearby</dt><dd>Sessions on your network show up on the Macs around you.</dd></div>
     </dl>
   </section>
 
   <section class="demo">
     <figure>
-      <img src="/images/mac-project.jpg" alt="A project's page in DevShare for Mac: its live preview, addresses and services" width="1600" height="1000" loading="lazy">
+      <img src="/images/mac-project.jpg" alt="A project in DevShare for Mac: live preview, addresses and services" width="1600" height="1000" loading="lazy">
     </figure>
     <div>
-      <h2>Try it with the demo</h2>
-      <p>DevShare for Mac comes with three demo projects (a site, a native app and a service) so that you can share something in one click before sharing your own. Their source is open, under the MIT licence: <a href="https://github.com/glitchr-studio/devshare-join/tree/main/demo">devshare-join/demo</a>.</p>
+      <h2>Start with the DevShare demo.</h2>
+      <p class="lead">DevShare for Mac ships with a ready-made example: a website, a React Native app and a service. Share it in one click, scan the code with your iPhone, and see all three at work.</p>
+      <p>Then switch to your own projects. <a href="https://github.com/glitchr-studio/devshare-join/tree/main/demo">Demo source, MIT</a></p>
     </div>
   </section>
 
   <section class="private">
-    <h2>Private by design</h2>
-    <p>No account, no analytics, no advertising. A session goes from your Mac to your guests; nothing of it is sent to us. What the apps handle, and where it goes, is in <a href="/privacy">the privacy policy</a>.</p>
+    <h2>No account. No tracking.</h2>
+    <p class="lead">Sessions go straight from your Mac to your guests. Nothing passes through us, nothing is kept. <a href="/privacy">Privacy policy</a></p>
+  </section>
+
+  <section class="closing">
+    <h2>Show your work, not a staging server.</h2>
+    <p class="soon">Coming soon for Mac, iPhone and iPad.</p>
+    <p><a class="button primary" href="mailto:support@glitchr.io?subject=DevShare%20launch">Get notified at launch</a></p>
   </section>
 </main>
 <script src="/js/invitation.js"></script>
