@@ -1,5 +1,7 @@
 // The invitation of an address https://join.glitchr.dev/#<invitation>: read on the device,
 // never sent anywhere. Without one, the page presents DevShare.
+// In its own scope: the navigation runs it again at each visit of the home page.
+(() => {
 // The code of an invitation, from what follows the # of this address:
 // one byte saying what follows, 32 bytes naming the host, then the code as
 // five bytes, eight characters of five bits each.
@@ -79,5 +81,14 @@ if (found) {
   robots.content = 'noindex';
   document.head.append(robots);
 }
-// Another # on this page (How it works, from an invitation): read the address again.
-window.addEventListener('hashchange', () => location.reload());
+// Another invitation in the address, or an anchor reached from an invitation (How it works): the
+// page reads the address again. An anchor of the presentation (#how) is only scrolled to. Run
+// again by the navigation at each visit of the home page: one listener only.
+if (!window.devshareInvitationHash) {
+  window.devshareInvitationHash = true;
+  window.addEventListener('hashchange', () => {
+    const invited = document.getElementById('invited');
+    if (code(location.hash.slice(1)) || (invited && !invited.hidden)) location.reload();
+  });
+}
+})();

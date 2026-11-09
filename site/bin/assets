@@ -1,0 +1,21 @@
+#!/bin/sh
+# flowjs and jQuery into public/, from npm (the versions below), for the static site:
+# the navigation without page loads (Transparent) and the fading blocks (Sticky).
+# Run it again to update them; the files it writes are committed, so the build needs no Node.
+set -eu
+cd "$(dirname "$0")/.."
+FLOWJS=1.6.2
+JQUERY=3.7.1
+SASS=1.83.4
+work=$(mktemp -d)
+trap 'rm -rf "$work"' EXIT
+(cd "$work" && npm pack --silent "@glitchr/flowjs@$FLOWJS" "jquery@$JQUERY" >/dev/null && for f in *.tgz; do mkdir "${f%.tgz}" && tar -xzf "$f" -C "${f%.tgz}"; done)
+flow=$(ls -d "$work"/glitchr-flowjs-*/package)
+mkdir -p public/flow/js public/flow/css public/vendor
+mkdir -p public/flow/images && cp "$flow/src/images/error.svg" public/flow/images/
+cp "$flow/src/js/core.js" "$flow/src/js/transparent.js" "$flow/src/js/sticky.js" public/flow/js/
+printf '@use "navigation";\n@use "sticky";\n' > "$work/flow.scss"
+npx --yes "sass@$SASS" --no-source-map --style=compressed --load-path="$flow/src/css" "$work/flow.scss" public/flow/css/flow.css
+cp "$work"/jquery-*/package/dist/jquery.min.js public/vendor/jquery.min.js
+echo "flowjs $FLOWJS, jQuery $JQUERY"
+ls -la public/flow/js public/flow/css public/vendor

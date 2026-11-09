@@ -29,10 +29,12 @@ $url = $origin.$path;
 <meta property="og:image" content="<?= htmlspecialchars($origin) ?>/images/mac-session.jpg">
 <link rel="icon" type="image/png" href="/images/icon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/flow/css/flow.css">
 <link rel="stylesheet" href="/css/site.css">
 <link rel="stylesheet" href="/css/credits.css">
 </head>
 <body class="page-<?= $page ?>">
+<div id="page" data-layout="<?= $page ?>">
 <header class="bar">
   <a class="brand" href="/"><img src="/images/icon.png" alt="" width="28" height="28"> DevShare</a>
   <nav>
@@ -46,5 +48,12 @@ $url = $origin.$path;
   <nav><a href="/privacy">Privacy</a> · <a href="/privacy#rights">GDPR</a> · <a href="/support">Support</a> · <a href="https://github.com/glitchr-studio/devshare-join/tree/main/demo">Demo projects</a></nav>
 <?php require __DIR__.'/credits.php'; ?>
 </footer>
+</div>
+<div id="loader"></div>
+<script src="/vendor/jquery.min.js"></script>
+<script src="/flow/js/core.js"></script>
+<script src="/flow/js/transparent.js"></script>
+<script src="/flow/js/sticky.js"></script>
+<script src="/js/site.js"></script>
 </body>
 </html>

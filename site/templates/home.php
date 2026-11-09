@@ -31,7 +31,7 @@
     <p class="platforms"><span>Mac</span><span>iPad</span><span>iPhone</span><span>Duo</span></p>
   </section>
 
-  <section class="kinds">
+  <section class="kinds sticky-easein">
     <h2>Websites, React Native apps, services.</h2>
     <p class="lead section-lead">Share them from your Mac with clients and testers, under their own names: <code class="host">shop.test</code>, <code class="host">portfolio.local</code>. No&nbsp;port, no&nbsp;IP.</p>
     <div class="kind-list">
@@ -56,7 +56,7 @@
     </div>
   </section>
 
-  <section id="how" class="how">
+  <section id="how" class="how sticky-easein">
     <h2>Three steps. Seconds, not a deployment.</h2>
     <ol class="steps">
       <li>
@@ -83,7 +83,7 @@ https://api.shop.test <span class="ok">200</span>
     </ol>
   </section>
 
-  <section class="guest" id="guest">
+  <section class="guest sticky-easein" id="guest">
     <figure class="phone">
       <div class="shot">
         <img src="/images/iphone-site.jpg" alt="A site shared from a Mac, open on an iPhone under its own name, with DevShare's toolbar at the bottom" width="552" height="1200" loading="lazy">
@@ -96,22 +96,19 @@ https://api.shop.test <span class="ok">200</span>
     </figure>
     <div class="guest-text">
       <h2>Feedback, right where it happens.</h2>
-      <div class="feature-tabs" role="tablist" aria-label="On the guest's iPhone">
-        <button type="button" role="tab" data-feature="comment" aria-selected="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg>Comments</button>
-        <button type="button" role="tab" data-feature="record" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5" class="fill"/></svg>Recordings</button>
-        <button type="button" role="tab" data-feature="time" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9v4l2.5 2M9.5 3h5"/></svg>Session time</button>
-        <button type="button" role="tab" data-feature="reload" aria-selected="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12a7 7 0 1 1-2.05-4.95"/><path d="M19 4v4h-4"/></svg>Fresh pages</button>
-      </div>
       <div class="feature-text" aria-live="polite">
-        <div data-feature="comment"><h3>Comments, with the page attached.</h3><p>A guest writes what they see, with a picture of the page, or reports a bug with the page's console lines. It lands in your session's timeline, next to the page it is about.</p></div>
-        <div data-feature="record" hidden><h3>Recordings of what they do.</h3><p>One tap films the page as the guest uses it. The video plays on your Mac, with the page's address and the moment it was made.</p></div>
-        <div data-feature="time" hidden><h3>The session's time, always in sight.</h3><p>Guests see how long is left. The session ends on its own; from your Mac you hold the countdown or end it at once.</p></div>
-        <div data-feature="reload" hidden><h3>Every reload asks your Mac.</h3><p>No cache in between: a change you save is the change they see, on the next reload.</p></div>
+        <div data-feature="comment"><h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg>Comments, with the page attached.</h3><p>A guest writes what they see, with a picture of the page, or reports a bug with the page's console lines. It lands in your session's timeline, next to the page it is about.</p></div>
+        <div data-feature="record"><h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5" class="fill"/></svg>Recordings of what they do.</h3><p>One tap films the page as the guest uses it. The video plays on your Mac, with the page's address and the moment it was made.</p></div>
+        <div data-feature="time"><h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9v4l2.5 2M9.5 3h5"/></svg>The session's time, always in sight.</h3><p>Guests see how long is left. The session ends on its own; from your Mac you hold the countdown or end it at once.</p></div>
+        <div data-feature="reload"><h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12a7 7 0 1 1-2.05-4.95"/><path d="M19 4v4h-4"/></svg>Every reload asks your Mac.</h3><p>No cache in between: a change you save is the change they see, on the next reload.</p></div>
       </div>
+      <p class="dots" aria-label="Features">
+        <button type="button" data-feature="comment" aria-label="Comments"></button><button type="button" data-feature="record" aria-label="Recordings"></button><button type="button" data-feature="time" aria-label="Session time"></button><button type="button" data-feature="reload" aria-label="Fresh pages"></button>
+      </p>
     </div>
   </section>
 
-  <section class="features">
+  <section class="features sticky-easein">
     <h2>Built for real projects.</h2>
     <dl>
       <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19c.6-3 2.8-4.5 5.5-4.5s4.9 1.5 5.5 4.5"/><circle cx="17" cy="9.5" r="2.3"/><path d="M16 14.6c2.3 0 4 1.3 4.5 4.4"/></svg><dt>Live session view</dt><dd>Who is connected, from where, on which page.</dd></div>
@@ -123,7 +120,7 @@ https://api.shop.test <span class="ok">200</span>
     </dl>
   </section>
 
-  <section class="demo">
+  <section class="demo sticky-easein">
     <figure>
       <img src="/images/mac-project.jpg" alt="A project in DevShare for Mac: live preview, addresses and services" width="1600" height="1000" loading="lazy">
     </figure>
@@ -134,12 +131,12 @@ https://api.shop.test <span class="ok">200</span>
     </div>
   </section>
 
-  <section class="private">
+  <section class="private sticky-easein">
     <h2>No account. No tracking.</h2>
     <p class="lead">Sessions go straight from your Mac to your guests. Nothing passes through us, nothing is kept. <a href="/privacy">Privacy policy</a></p>
   </section>
 
-  <section class="closing">
+  <section class="closing sticky-easein">
     <h2>Show your work, not a staging server.</h2>
     <p class="soon">Coming soon for Mac, iPhone and iPad.</p>
     <p><a class="button primary" href="mailto:support@glitchr.io?subject=DevShare%20launch">Get notified at launch</a></p>
