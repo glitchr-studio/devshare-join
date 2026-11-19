@@ -69,7 +69,7 @@
       <li>
         <h3>Share</h3>
         <p>One click gives a QR code, a link and a code. The session ends on its own.</p>
-        <pre><span class="dim">link</span>  join.glitchr.dev/#gVOx…
+        <pre><span class="dim">qr  </span>  scan to join
 <span class="dim">code</span>  7GX2-KLM9
 <span class="dim">ends</span>  in 1:00:00</pre>
       </li>
