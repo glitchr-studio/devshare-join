@@ -9,7 +9,7 @@
   const section = document.getElementById('guest');
   if (!section) return;
   const spot = section.querySelector('.spot');
-  const order = ['comment', 'record', 'time', 'reload'];
+  const order = ['time', 'comment', 'record', 'reload'];
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let current = -1;
   let inView = false;

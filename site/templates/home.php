@@ -38,14 +38,14 @@
       <div class="kind">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
         <h3>Websites</h3>
-        <p>Open in DevShare's browser under their own names, in HTTPS, with every reload fresh from your Mac.</p>
+        <p>Open in DevShare's browser, in HTTPS.</p>
         <code>https://devshare.local</code>
       </div>
       <div class="kind">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
         <h3>React Native apps</h3>
         <p>Run on your guest's iPhone or iPad, live from your Metro server. Nothing to build or install.</p>
-        <code>exp://devshare-native.local:8081</code>
+        <code>devshare-native.local</code>
       </div>
       <div class="kind">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="16" rx="2.5"/><path d="M6.5 9l3 3-3 3M11.5 15h5"/></svg>
@@ -103,8 +103,8 @@ https://api.shop.test <span class="ok">200</span>
         <div data-feature="time"><h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9v4l2.5 2M9.5 3h5"/></svg>The session's time, always in sight.</h3><p>Guests see how long is left. The session ends on its own; from your Mac you hold the countdown or end it at once.</p></div>
         <div data-feature="reload"><h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12a7 7 0 1 1-2.05-4.95"/><path d="M19 4v4h-4"/></svg>Every reload asks your Mac.</h3><p>No cache in between: a change you save is the change they see, on the next reload.</p></div>
       </div>
-      <p class="dots" aria-label="Features">
-        <button type="button" data-feature="comment" aria-label="Comments"></button><button type="button" data-feature="record" aria-label="Recordings"></button><button type="button" data-feature="time" aria-label="Session time"></button><button type="button" data-feature="reload" aria-label="Fresh pages"></button>
+      <p class="dots" role="group" aria-label="Features">
+        <button type="button" data-feature="time" aria-label="Session time"></button><button type="button" data-feature="comment" aria-label="Comments"></button><button type="button" data-feature="record" aria-label="Recordings"></button><button type="button" data-feature="reload" aria-label="Fresh pages"></button>
       </p>
     </div>
   </section>
@@ -114,10 +114,10 @@ https://api.shop.test <span class="ok">200</span>
     <dl>
       <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19c.6-3 2.8-4.5 5.5-4.5s4.9 1.5 5.5 4.5"/><circle cx="17" cy="9.5" r="2.3"/><path d="M16 14.6c2.3 0 4 1.3 4.5 4.4"/></svg><dt>Live session view</dt><dd>Who is connected, from where, on which page.</dd></div>
       <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/><path d="M10 15l1.5 1.5 3-3"/></svg><dt>Trusted HTTPS</dt><dd>Your Mac's own certificate authority. No browser warnings.</dd></div>
-      <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3v5M15 3v5"/><path d="M6.5 8h11v4a5.5 5.5 0 0 1-11 0z"/><path d="M12 17.5V21"/></svg><dt>Any port</dt><dd>APIs, services and databases, not only websites.</dd></div>
       <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.3 2.4 3.4 5.2 3.4 8.5s-1.1 6.1-3.4 8.5c-2.3-2.4-3.4-5.2-3.4-8.5S9.7 5.9 12 3.5z"/></svg><dt>Any network</dt><dd>Peer-to-peer when possible, relayed when needed. <a href="https://github.com/glitchr-studio/devshare-relay">Bring your own relay.</a></dd></div>
-      <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><dt>Native apps</dt><dd>React Native apps run on the guest's iPhone from your Metro server.</dd></div>
       <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1.8" class="fill"/><path d="M8.2 8.2a5.4 5.4 0 0 0 0 7.6M15.8 8.2a5.4 5.4 0 0 1 0 7.6M5.4 5.4a9.3 9.3 0 0 0 0 13.2M18.6 5.4a9.3 9.3 0 0 1 0 13.2"/></svg><dt>Nearby</dt><dd>Sessions on your network show up on the Macs around you.</dd></div>
+      <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="9.5" rx="2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg><dt>Sites behind a password</dt><dd>Guests type it once; DevShare remembers it until the session ends.</dd></div>
+      <div><svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8 20h8M12 16.5V20"/></svg><dt>Guests on a Mac</dt><dd>DevShare for Mac joins sessions too, in a simple view made for guests.</dd></div>
     </dl>
   </section>
 
@@ -128,13 +128,13 @@ https://api.shop.test <span class="ok">200</span>
     <div>
       <h2>Start with the DevShare demo.</h2>
       <p class="lead">DevShare for Mac ships with a ready-made example: a website, a React Native app and a service. Share it in one click, scan the code with your iPhone, and see all three at work.</p>
-      <p>Then switch to your own projects. <a href="https://github.com/glitchr-studio/devshare-demo">glitchr-studio/devshare-demo</a> (MIT)</p>
+      <p>Then switch to your own projects. Source: <a href="https://github.com/glitchr-studio/devshare-demo">devshare-demo on GitHub</a> · MIT</p>
     </div>
   </section>
 
   <section class="private sticky-easein">
     <h2>No account. No tracking.</h2>
-    <p class="lead">Sessions go straight from your Mac to your guests. Nothing passes through us, nothing is kept. <a href="/privacy">Privacy policy</a></p>
+    <p class="lead">End-to-end encrypted, from your Mac to your guests. No session data reaches us. <a href="/privacy">Privacy policy</a></p>
   </section>
 
   <section class="closing sticky-easein">

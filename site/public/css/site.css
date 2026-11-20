@@ -323,3 +323,8 @@ section + section { border-top: 0; }
 .foot-links svg.mark { fill: currentColor; stroke: none; }
 .foot-links svg .fill { fill: currentColor; stroke: none; }
 .foot-links .sep { color: var(--muted); opacity: 0.55; }
+
+/* The carousel's dots: a larger area to tap than the dot drawn; the phone's buttons and the dots outlined when reached by the keyboard. */
+.dots button { position: relative; }
+.dots button::after { content: ""; position: absolute; inset: -8px -4px; }
+.hot:focus-visible, .dots button:focus-visible { outline: 3px solid #e5484d; outline-offset: 2px; }
